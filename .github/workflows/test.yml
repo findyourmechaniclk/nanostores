@@ -12,6 +12,7 @@ jobs:
   full:
     name: Node.js Latest Full
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout the repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -28,6 +29,7 @@ jobs:
         run: pnpm test
   short:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     strategy:
       matrix:
         node:
@@ -50,6 +52,7 @@ jobs:
         run: pnpm bnt
   old:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     name: Node.js 20 Quick
     steps:
       - name: Checkout the repository
@@ -71,6 +74,7 @@ jobs:
   benchmark:
     name: Benchmark
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout the repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
